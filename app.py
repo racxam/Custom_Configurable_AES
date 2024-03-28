@@ -48,5 +48,3 @@ def decrypt():
     decrypted_text = decrypt_text(ciphertext, key, nonce)
     return jsonify({'decrypted_text': decrypted_text})
 
-if __name__ == '__main__':
-    app.run(debug=True)
