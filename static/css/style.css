@@ -1,0 +1,222 @@
+/* style.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding shadow */
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0; /* Initial opacity to start with */
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+    animation: fadeInDown 0.5s ease forwards;
+    /* opacity: 0; Initial opacity to start with */
+}
+
+label {
+    font-weight: bold;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0; 
+}
+
+input[type="text"],
+select {
+    width: calc(100% - 22px); /* Adjusted width to accommodate borders */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* animation: slideInRight 0.5s ease forwards;
+    opacity: 0; Initial opacity to start with */
+}
+
+select {
+    /* Styling dropdown menu */
+    appearance: none; /* Remove default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6"><path d="M6 0l-6 6h12z" fill="%23000"/></svg>'); /* Add custom arrow */
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    padding-right: 30px; /* Adjust padding to accommodate arrow */
+    width: calc(100%); /* Ensure consistent width */
+    position: relative; /* Position relative for absolute positioning of options */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+select:focus {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6"><path d="M6 6l6-6H0z" fill="%23000"/></svg>'); /* Change arrow direction when focused */
+}
+
+select option {
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+select option:hover {
+    background-color: #f0f0f0;
+}
+
+.select-options {
+    position: absolute;
+    top: calc(100% + 2px); /* Position below the select */
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-top: none; /* Remove top border to avoid duplication */
+    border-radius: 0 0 5px 5px; /* Rounded bottom corners */
+    background-color: #fff;
+    z-index: 1; /* Ensure the options are above other content */
+    display: none; /* Initially hidden */
+}
+
+.select-options.active {
+    display: block; /* Show when active */
+}
+
+button {
+    width: 48%; /* Making buttons smaller */
+    padding: 8px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    animation: slideInLeft 0.5s ease forwards;
+    opacity: 0; /* Initial opacity to start with */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.results {
+    margin-top: 20px;
+    text-align: center;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0; /* Initial opacity to start with */
+}
+
+.results p {
+    margin-bottom: 10px;
+    color: #333;
+    animation: slideUp 0.5s ease forwards;
+    opacity: 0; /* Initial opacity to start with */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Start slightly above and move down */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Start slightly above and move down */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px); /* Start slightly to the right and move left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px); /* Start slightly to the left and move right */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly below and move up */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+/* Adjust styles for the password input */
+.password-input {
+    position: relative;
+    width: calc(100%); /* Adjusted width to accommodate the eye icon */
+    display: flex; /* Use flexbox to center the icon vertically */
+    align-items: center; /* Center items vertically */
+}
+
+.password-input input[type="password"] {
+    flex: 1; /* Allow input field to expand to fill available space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.password-input .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-30%);
+    width: 40px;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+    /* Remove animation */
+    animation: none;
+}
+
+/* Style the eye icon */
+.password-input .toggle-password i {
+    width: 20px;
+    height: 20px;
+    color: #555;
+}
